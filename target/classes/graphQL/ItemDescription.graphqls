@@ -1,0 +1,5 @@
+type ItemDescription {
+	itemProperties: String
+	sellerName: String
+	disclaimer: String
+}

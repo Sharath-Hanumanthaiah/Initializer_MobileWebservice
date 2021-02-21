@@ -1,0 +1,13 @@
+type HomePage {
+	id: ID!
+	previousApiId: ID!
+	itemType: String!
+	typeId: ID
+	widget: String!
+	name: String
+	content: [HomePageContent]
+}
+
+extend type Query {
+  getHomePage(first: Int, after: String): HomePageConnection @connection(for: "HomePage")
+}

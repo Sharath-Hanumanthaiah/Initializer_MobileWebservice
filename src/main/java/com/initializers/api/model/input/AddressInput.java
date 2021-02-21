@@ -1,0 +1,63 @@
+package com.initializers.api.model.input;
+
+public class AddressInput {
+
+	private Long userId;
+	private String name;
+	private String phoneNumber;
+	private String firstLine;
+	private String secondLine;
+	private String landMark;
+	private String pinCode;
+	private Long previousApiId;
+	
+	public Long getUserId() {
+		return userId;
+	}
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public String getFirstLine() {
+		return firstLine;
+	}
+	public void setFirstLine(String firstLine) {
+		this.firstLine = firstLine;
+	}
+	public String getSecondLine() {
+		return secondLine;
+	}
+	public void setSecondLine(String secondLine) {
+		this.secondLine = secondLine;
+	}
+	public String getLandMark() {
+		return landMark;
+	}
+	public void setLandMark(String landMark) {
+		this.landMark = landMark;
+	}
+	public String getPinCode() {
+		return pinCode;
+	}
+	public void setPinCode(String pinCode) {
+		this.pinCode = pinCode;
+	}
+	public Long getPreviousApiId() {
+		return previousApiId;
+	}
+	public void setPreviousApiId(Long previousApiId) {
+		this.previousApiId = previousApiId;
+	}
+	
+}

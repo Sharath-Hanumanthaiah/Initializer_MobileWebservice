@@ -1,0 +1,14 @@
+type ItemCategory {
+	id: ID!
+	previousApiId: String!
+	name: String
+	description: String
+	offer: String
+	imageLink: String
+}
+
+extend type Query {
+  getItemCategory(first: Int, after: String): ItemCategoryConnection @connection(for: "ItemCategory")
+  getItemCategoryContentById(first: Int, after: String, categoryId: ID): ItemCategoryConnection @connection(for: "ItemCategory")
+  getItemCategoryContentByIdTemp(categoryId: ID): [ItemCategory!]!
+}

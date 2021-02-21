@@ -1,0 +1,19 @@
+type ItemDetails {
+	id: ID!
+	previousApiId: ID!
+	categoryId: ID
+	subCategoryId: ID
+	name: String
+	description: ItemDescription
+	itemAvailability: [ItemAvailability]
+	imageLinks: [String]
+	imageLink: String
+	status: String
+	isWishlist: Boolean
+	averageRating: Float
+}
+
+extend type Query {
+  getItemDetails(first: Int, after: String, itemType: String, typeId: ID, userId: ID!): ItemDetailsConnection @connection(for: "ItemDetails")
+  getItemDetailsById(itemId: ID!, userId: ID!) : ItemDetails
+}

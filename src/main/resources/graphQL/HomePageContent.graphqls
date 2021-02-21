@@ -1,0 +1,8 @@
+type HomePageContent {
+	id: ID!
+	previousApiId: String!
+	name: String
+	description: String
+	offer: String
+	imageLink: String
+}

@@ -1,0 +1,16 @@
+type UserWishList {
+	userID: ID!
+	itemDetails: [ItemDetails]
+}
+
+extend type Query {
+  getUserWishList(first: Int, after: String, userId: ID): ItemDetailsConnection @connection(for: "ItemDetails")
+}
+input UserWishListInput {
+	userId: ID!
+	itemId: ID!
+	type: String
+}
+extend type Mutation {
+  changeWishList(input: UserWishListInput!): Boolean
+}

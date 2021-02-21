@@ -1,0 +1,26 @@
+type UserDetails {
+	id: ID!
+	previousApiId: ID!
+	firstName: String
+	lastName: String
+	email: String
+	password: String
+	status: String
+}
+
+input UserDetailsInput {
+	previousApiId: ID!
+	firstName: String
+	lastName: String
+	email: String
+}
+
+type UserDetailsOutput {
+	userDetails: UserDetails
+}
+type Query {
+  getUserById( id : ID!): UserDetails
+}
+extend type Mutation {
+  updateUser(input: UserDetailsInput!): UserDetailsOutput
+}

@@ -1,0 +1,10 @@
+type UserOrder {
+	userId: ID!
+	itemId: ID!
+	itemName: String
+	availabilityId: ID
+	quantity: ID
+	amount: Float
+	unit: String
+	imageLink: String
+}

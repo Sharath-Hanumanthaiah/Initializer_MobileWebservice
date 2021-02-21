@@ -1,0 +1,13 @@
+type ItemSubCategory {
+	id: ID!
+	previousApiId: String!
+	categoryId: ID
+	name: String
+	description: String
+	offer: String
+	imageLink: String
+}
+
+extend type Query {
+  getItemSubCategoryByCategoryId(first: Int, after: String, categoryId: ID): ItemSubCategoryConnection @connection(for: "ItemSubCategory")
+}

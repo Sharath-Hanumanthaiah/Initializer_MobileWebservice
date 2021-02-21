@@ -1,0 +1,22 @@
+scalar Date
+type UserOrderSet {
+	id: ID!
+	previousApiId: ID!
+	orderList: [UserOrder]
+	orderDetails: String
+	addressId: ID
+	addressDetails: Address
+	status: OrderStatus
+	orderAt: Date
+	deliveredBy: Date
+	netAmount: Float
+	totalAmount: Float
+	deliveryCharge: Float
+	coupenCode: String
+	coupenDiscount: Float
+}
+
+extend type Query {
+  getUserOrderSet(first: Int, after: String, userId: ID!): UserOrderSetConnection @connection(for: "UserOrderSet")
+  getUserOrderById(orderId: ID!): UserOrderSet
+}

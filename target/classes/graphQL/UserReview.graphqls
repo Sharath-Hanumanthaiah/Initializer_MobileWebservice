@@ -1,0 +1,21 @@
+scalar Date
+type CompositeKey {
+	userId: ID
+	itemId: ID
+}
+type UserReview {
+	id: String
+	previousApiId: CompositeKey
+	userName: String
+	rating: Int
+	review: String
+	changedAt: Date
+}
+
+extend type Query {
+ getItemReview(first: Int, after: String, itemId: ID!) : UserReviewConnection @connection(for: "UserReview")
+}
+
+type Mutation {
+  addItemReview(itemId: ID!, userId: ID!, rating: Int, review: String): UserReview
+}

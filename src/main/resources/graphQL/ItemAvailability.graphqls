@@ -1,0 +1,10 @@
+type ItemAvailability {
+	id: ID!
+	itemId: ID!
+	actualPrice: Float
+	discount: Long
+	discountPrice: Float
+	value: Float
+	unit: String
+	available: String
+}

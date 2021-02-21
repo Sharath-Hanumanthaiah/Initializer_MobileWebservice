@@ -1,0 +1,31 @@
+type Address {
+	id: ID!
+	previousApiId: ID!
+	userId: ID
+	name: String	
+	phoneNumber: String
+	firstLine: String
+	secondLine: String
+	landMark: String
+	pinCode: String
+}
+input AddressInput {
+	userId: ID!
+	name: String!
+	phoneNumber: String!
+	previousApiId: ID
+	firstLine: String
+	secondLine: String
+	landMark: String
+	pinCode: String
+}
+type AddressOutput {
+	address: Address
+}
+extend type Query {
+  getAddress(first: Int, after: String, userId: ID): AddressConnection @connection(for: "Address")
+}
+extend type Mutation {
+  upsertAddress(input: AddressInput!): AddressOutput
+  deleteAddress(id: ID!): Boolean
+}

@@ -1,0 +1,53 @@
+type CompositeKeyCart {
+	userId: ID
+	itemId: ID
+	availabilityId: ID
+}
+type UserCart {
+	id: ID!
+	previousApiId: CompositeKeyCart
+	quantity: ID
+}
+
+type UserCartList {
+	id: ID!
+	previousApiId: CompositeKeyCart
+	quantity: ID
+	discountPrice: Float
+	value: Float
+	unit: String
+	itemName: String
+	imageLink: String
+}
+
+input CompositeKeyCartInput {
+	userId: ID
+	itemId: ID
+	availabilityId: ID
+}
+
+input UserCartInput {
+	previousApiId: CompositeKeyCartInput
+	quantity: ID
+}
+
+input CreateOrderInput {
+	userId: ID!
+	addressId: ID!
+	coupenCode: String
+}
+
+type CreateOrderOutput {
+	orderId: ID!
+	deliveredBy: Date
+	totalAmount: Float
+}
+
+extend type Query {
+ getUserCart(first: Int, after: String, userId: ID!) : UserCartListConnection @connection(for: "UserCartList")
+}
+
+extend type Mutation {
+  addUserCart(input: UserCartInput!): UserCartList
+  createOrderFromCart(input: CreateOrderInput ): CreateOrderOutput!
+}

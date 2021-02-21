@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "graphql.servlet.websocket.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'graphql.servlet.websocket.enabled'"
+  },
+  {
+    "name": "graphql.servlet.corsEnabled",
+    "type": "java.lang.String",
+    "description": "A description for 'graphql.servlet.corsEnabled'"
+  },
+  {
+    "name": "graphql.servlet.corsEnabled",
+    "type": "java.lang.String",
+    "description": "A description for 'graphql.servlet.corsEnabled'"
+  },
+  {
+    "name": "graphql.servlet.corsEnabled",
+    "type": "java.lang.String",
+    "description": "A description for 'graphql.servlet.corsEnabled'"
+  },
+  {
+    "name": "graphql.servlet.corsEnabled",
+    "type": "java.lang.String",
+    "description": "A description for 'graphql.servlet.corsEnabled'"
+  }
+]}
